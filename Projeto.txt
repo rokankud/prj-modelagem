@@ -1,0 +1,140 @@
+Rossana,
+
+Como as disciplinas deste bloco são “complementares”, o enunciado deste projeto serve para as duas disciplinas do bloco (“Modelagem de bases de dados” e “Projeto físico com SQL, PL/SQL e TSQL”), de forma que a primeira parte do projeto será desenvolvida na primeira disciplina e a parte final na segunda disciplina.
+
+Assim, é necessário finalizar o projeto da primeira disciplina para dar continuidade a ele na segunda.
+
+ESPECIFICAÇÃO DO PROJETO
+Temas sugeridos
+
+Cada aluno deverá escolher um dos temas abaixo:
+
+Conserto de roupas
+Controle de vendas de um armazém
+Gerência de vendas de um sítio eletrônico
+Troca de livros online
+Controle de Recursos Humanos de uma empresa
+Acompanhamento de alunos de EAD (Ensino à Distância)
+Acompanhamento de trajetos de ônibus de uma metrópole
+Controle de acesso ao estacionamento de um Shopping Center
+Outro tema à escolha do aluno
+A escolha do tema já deve ser apresentada na segunda aula.
+
+
+O trabalho será composto por seis partes e fases:
+
+Levantamento de Requisitos
+Modelo Conceitual
+Projeto Lógico
+Projeto Físico
+Carga de Dados
+Consultas de Dados
+
+
+Especificação das partes e fases:
+
+1) Definição de mini mundo
+
+Nesta etapa são levantados os requisitos para a construção do modelo. Num ambiente real estes requisitos são levantados juntos aos usuários demandantes. Mas no ambiente de projeto e de laboratório espera-se que estes requisitos sejam “criados” e “simulados” pelos alunos.
+
+Para que se consiga estar mais próximo à realidade prática, o ideal seria conseguir levantar estes requisitos com alguns usuários que vivam ou conheçam os problemas no dia a dia. É possível, por exemplo, escolher um tema próximo ao universo que o aluno trabalha e tentar levantar com alguém do setor que tipo de requisitos ele precisaria para resolver sua demanda por informações/organização de dados.
+
+Já que o foco de nosso curso é se aproximar ao máximo do “mundo real corporativo”, como sugestão vale à pena tentar identificar se o aluno possui uma demanda em sua empresa por algum tipo de informação que caiba a construção de uma estrutura de dados semelhante à proposta no bloco. O aluno então trabalharia para atender a esta demanda.
+
+Caso não se consiga um ambiente próximo do “real”, é possível se gerar requisitos, simulando-os e criando-os.
+
+Em ambos os casos (real ou simulado) caso devem ser geradas pelo menos cinco (5) questões a serem perguntadas ao real/hipotético cliente. Estas perguntas devem estar especificadas no projeto.
+
+ 
+
+2) Modelo Conceitual
+
+Com base nas respostas reais/hipotéticas fornecidas na etapa anterior (levantamento de requisitos), deve-se elaborar um Modelo de Entidades e Relacionamentos (M.E.R.) possuindo no mínimo:
+
+10 entidades (todas com chave primária)
+40 atributos
+Relacionamentos das cardinalidades 1xN e MxN
+ 
+--até o modelo lógico
+3) Modelo Lógico
+
+Com base no M.E.R. construído na etapa anterior (modelo conceitual), deve-se gerar um modelo lógico no qual conste a criação de todas as tabelas e relacionamentos lá apresentadas.
+
+A partir do modelo desenvolvido:
+
+3.1) Apresente exemplos que utilizem conceitos de seleção e de projeção;
+
+3.2) Apresente exemplos que utilizem conceitos de união e diferença;
+
+3.3) Apresente exemplos que utilizem conceitos de produto cartesiano e interseção;
+
+3.4) Apresente exemplos que utilizem conceitos de divisão e agregação.
+
+ 
+--aqui um pouquinho
+4) Modelo Físico
+
+Com base no modelo lógico construído na etapa anterior deve-se gerar um modelo físico e um conjunto de instruções SQL compatíveis com o SGBD escolhido (Oracle ou SQL Server) para criação dos objetos no banco. Não esquecer de fazer menção às FKs e PKs.
+
+Esquema: Deve-se criar um schema Oracle ou uma base SQL Server e executar as instruções SQL geradas nesta etapa.
+
+Implementação: As instruções geradas devem gerar uma estrutura de dados física, na qual os dados devem ser armazenados (especificação na próxima etapa) para continuar o desenvolvimento do projeto.
+
+4.1) Devem ser criadas tabelas de acordo com as entidades apresentadas no MER;
+
+4.2) Deve ser criada ao menos uma tabela que possua um trigger;
+
+4.3) Deve ser criada ao menos uma view para visualização de dados;
+
+4.4) Não esqueça de criar as constraints PK e FK;
+
+4.5) Deve ser utilizado ao menos 4 atributos que possuam a constraint NOT NULL;
+
+4.6) Deve ser utilizado ao menos 2 atributos que possuam a constraint UNIQUE;
+
+4.7) Deve ser utilizado ao menos 2 atributos que possuam a constraint DEFAULT.
+
+ 
+
+5) Carga de Dados
+
+Rotinas: Com base na estrutura de dados gerada na etapa anterior (modelo físico), devem ser criadas rotinas/scripts em PL/SQL ou TSQL para alimentar tabelas.
+
+Não deve existir preocupação em produzir nomes “reais”. Por exemplo, uma pessoa poderia se chamar P001 e residir no logradouro L001.
+
+Volumetria: Devem existir tabelas atendendo às condições:
+
+Ao menos uma tabela deve possuir mais que um milhão de linhas (repositórios gerados por transações costumam atingir grandes volumes)
+No mínimo três (3) tabelas de cadastro. Exemplos: Cliente, Aluno, Livro, Filme etc.
+Não se esqueça de utilizar os conceitos de concorrência, transações (BEGIN TRANSACTION, ROLLBACK, COMMIT) e bloqueios em suas cargas de dados. Explique por que utilizar a transação neste ponto da carga.
+
+Nas cargas devem ser utilizadas operações de INCLUSÃO, ALTERAÇÃO E EXCLUSÃO de dados.
+
+ 
+
+6) Consultas de dados
+
+Devem ser construídas consultas que “respondam” às questões levantadas na etapa “1) Definição de mini mundo”.
+
+Por exemplo, no tema “Conserto de Roupas”, poderia existir esta questão:
+
+Onde moram e como poderia contatar os cinco (5) clientes cujos consertos levaram mais tempo nos últimos doze meses?
+E a resposta seria uma relação com cinco linhas contendo nome, endereço e telefone dos clientes teoricamente mais insatisfeitos.
+
+Devem ser construídas ao menos uma (1) consulta para cada questão levantada na fase “1) Definição de mini mundo”.
+
+Além das consultas que respondam às questões apresentadas anteriormente, a partir do modelo desenvolvido:
+
+6.1) Crie consultas que utilizem conceitos de agregação de dados utilizando as cláusulas Count e Sum;
+
+6.2) Crie consultas que utilizem conceitos de agregação de dados utilizando as cláusulas Min e Max;
+
+6.3) Crie consultas que utilizem conceitos de agregação de dados utilizando a cláusula AVG;
+
+6.4) Crie consultas que utilizem conceitos de agregação utilizando as cláusulas GROUP BY e HAVING.
+
+Como anunciado inicialmente este projeto será apresentado em duas partes, uma em cada disciplina do bloco.
+
+A primeira parte, que deve ser apresentada como projeto desta disciplina, é o desenvolvimento deste projeto até a fase 3 (Modelo Lógico).
+
+O apresentável do projeto deve ser um arquivo PDF com a especificação dos itens das fases 1, 2 e 3 do projeto. Assim que terminar, salve o seu arquivo PDF e poste no Moodle. Utilize o nome do aluno para nomear o arquivo, identificando também a disciplina no seguinte formato: “nomedoaluno_nomedadisciplina_pd.PDF”.
